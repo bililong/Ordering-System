@@ -9,7 +9,7 @@ import jakarta.validation.constraints.NotNull;
 public class PayNoticeMessage extends AbstractRedisStreamMessage {
 
     /**
-     * 订单编号
+     * 订单编号bill测试
      */
     @NotNull(message = "订单编号编号不能为空")
     private String orderId;
