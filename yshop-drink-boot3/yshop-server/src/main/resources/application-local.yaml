@@ -46,22 +46,22 @@ spring:
       primary: master
       datasource:
         master:
-          url: jdbc:mysql://127.0.0.1:3306/yixiang-drink-open?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
-          username: root
-          password: root
+          url: ENC(gM4eWrWs8h/twOKNjOyTjSQCmsXzbP+omZtaIqm38tZpicXH0hEz1j71x7IqNxNm/KPItG/3x8aW8pMfdmZwZOojLEcc2gsgvK4TiaXinM/KC0LNu8U/MPgPfRNIfpwEmWKvN7cJkNffpK4QSoBtdrPFuHtSeNDzGffOWwbDLuSGO35ZZA1WwYEeWXMyaVr+Nglxg3mdz7UO8Is4o2imURdhHQDfolwxqIHKOBZWdFo=) # MySQL Connector/J 8.X 连接的示例
+          username: ENC(k06CamRJ+XyLhT8TbbbfufrT76QPNIVtyx5CkD7I8VqEO9xAvT56ETT2coxJzlaV)
+          password: ENC(9WcQLDO295eYuo62S3awlGaoxJ7n788XKWPfsrbCd7ZcUboqXfnYch3WlMOZi8LV)
         slave: # 模拟从库，可根据自己需要修改
           lazy: true # 开启懒加载，保证启动速度
-          url: jdbc:mysql://127.0.0.1:3306/yixiang-drink-open?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true
-          username: root
-          password: root
+          url: ENC(gM4eWrWs8h/twOKNjOyTjSQCmsXzbP+omZtaIqm38tZpicXH0hEz1j71x7IqNxNm/KPItG/3x8aW8pMfdmZwZOojLEcc2gsgvK4TiaXinM/KC0LNu8U/MPgPfRNIfpwEmWKvN7cJkNffpK4QSoBtdrPFuHtSeNDzGffOWwbDLuSGO35ZZA1WwYEeWXMyaVr+Nglxg3mdz7UO8Is4o2imURdhHQDfolwxqIHKOBZWdFo=) # MySQL Connector/J 8.X 连接的示例
+          username: ENC(k06CamRJ+XyLhT8TbbbfufrT76QPNIVtyx5CkD7I8VqEO9xAvT56ETT2coxJzlaV)
+          password: ENC(9WcQLDO295eYuo62S3awlGaoxJ7n788XKWPfsrbCd7ZcUboqXfnYch3WlMOZi8LV)
 
   # Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
   data:
     redis:
-      host: 127.0.0.1 # 地址
+      host: ENC(YqeyZeiuBAK0J00QP1w2p3jzekU3o5oOCaAmKKT3553W0Bwh300R+4U5FkbDhD7t) # 地址
       port: 6379 # 端口
       database: 0 # 数据库索引
-#    password: dev # 密码，建议生产环境开启
+      password: ENC(1NpU1PKdJZuobyKw8R4juhBqGrDF3oOMHar1heq80UFK4fh208lw5sLRmw9IrTWu) # 密码，建议生产环境开启
 
 --- #################### 定时任务相关配置 ####################
 
@@ -94,23 +94,12 @@ spring:
     jdbc: # 使用 JDBC 的 JobStore 的时候，JDBC 的配置
       initialize-schema: NEVER # 是否自动使用 SQL 初始化 Quartz 表结构。这里设置成 never ，我们手动创建表结构。
 
---- #################### 消息队列相关 ####################
-
-# rocketmq 配置项，对应 RocketMQProperties 配置类
-rocketmq:
-  name-server: 127.0.0.1:9876 # RocketMQ Namesrv
-
-spring:
   # RabbitMQ 配置项，对应 RabbitProperties 配置类
   rabbitmq:
-    host: 127.0.0.1 # RabbitMQ 服务的地址
+    host: ENC(YqeyZeiuBAK0J00QP1w2p3jzekU3o5oOCaAmKKT3553W0Bwh300R+4U5FkbDhD7t) # RabbitMQ 服务的地址
     port: 5672 # RabbitMQ 服务的端口
     username: rabbit # RabbitMQ 服务的账号
     password: rabbit # RabbitMQ 服务的密码
-  # Kafka 配置项，对应 KafkaProperties 配置类
-  kafka:
-    bootstrap-servers: 127.0.0.1:9092 # 指定 Kafka Broker 地址，可以设置多个，以逗号分隔
-
 --- #################### 服务保障相关配置 ####################
 
 # Lock4j 配置项
